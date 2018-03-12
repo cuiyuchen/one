@@ -1,9 +1,11 @@
 var gulp = require('gulp');   // 引入依赖包
 var sass = require('gulp-sass'); //引入依赖包
+var px2rem = require('gulp-px2rem-plugin');
 gulp.task('sass', function(){
     //sass()方法用于转换sass到css
   return gulp.src('./scss/*.scss')   //执行sass文件的路径
-    .pipe(sass()) // 将Sass转换为带有gulp-Sass的CSS
+    .pipe(sass())
+    //.pipe(px2rem({'width_design':750,ignore_px:['font-size']})) // 将Sass转换为带有gulp-Sass的CSS
     .pipe(gulp.dest('./css')) //输出css文件的路径
 });
 

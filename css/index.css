@@ -1,6 +1,32 @@
+* {
+  margin: 0;
+  padding: 0; }
+
 html, body {
   height: 100%; }
 
 body {
+  color: #fff;
+  background: #fff;
+  font-size: 21px; }
+
+.btn {
+  background: #ddffdd;
+  margin-left: 50px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  color: '#ddd'; }
+
+.box {
+  height: 60px;
+  width: 10rem;
   color: #ff0;
-  background: #0f0; }
+  border-bottom: 1px solid #000;
+  font-size: 16px; }
+  [data-dpr="2"] .box {
+    font-size: 32px; }
+  [data-dpr="3"] .box {
+    font-size: 48px; }
