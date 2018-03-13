@@ -113,15 +113,15 @@ $btn:(
 }
  .icon {
       /* 通过设置 font-size 来改变图标大小 */
-      width: 40px; height: 40px;
+    width: 40px; height: 40px;
       /* 图标和文字相邻时，垂直对齐 */
-      vertical-align: -0.15em;
+    vertical-align: -0.15em;
       /* 通过设置 color 来改变 SVG 的颜色/fill */
-      fill: currentColor;
+    fill: currentColor;
       /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
          normalize.css 中也包含这行 */
-      overflow: hidden;
-      margin-bottom:10px
+    overflow: hidden;
+    margin-bottom:10px
 }
 .modelbox{
 	@include modelbox();
@@ -153,4 +153,45 @@ $btn:(
 		content:'';
 		margin-left:30px
 	}
+}
+.label{
+	height:60px;
+	padding:0 20px;
+	@include flexbox();
+	@include flex();
+	@include align-items(center);
+	@include justify-content('flex-start ');
+	width:100%;
+	p{
+		width:25%;
+		height:60px;
+		line-height:60px;
+		text-align:center
+	}
+	input{
+		width:66%;
+		background:#ccc;
+		height:60px;
+	}
+}
+input[type=date]:before{
+	background:#0f0;
+	content:attr(placeholder);
+	color:#ccc;
+}
+input[type=data].full:before{
+	color:black;
+	content:''
+}
+input[type=radio]{
+	width:30px;
+	height:30px;
+	background:url(../image/xb-kong.png) no-repeat;
+	background-size:cover;
+}
+input[type=radio]:checked{
+	width:30px;
+	height:30px;
+	background:url(../image/xb-sle.png) no-repeat;
+	background-size:cover;
 }
