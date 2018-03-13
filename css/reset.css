@@ -1,0 +1,179 @@
+@charset "UTF-8";
+/**
+ * 定义css不同浏览器的前缀
+ * @method prefix
+ * @param {String} $property, 属性； $value 值
+ */
+/**
+ * 定义UA默认外观
+ * @method appearance
+ * @param {String} $appearance 指定UA外观类型
+ */
+/**
+ * 根据dpi设置不同的字体
+ * @method font
+ * @param {String} $font-size 字体的大小
+ */
+/**
+ * 定义显示类型为伸缩盒
+ * @method flexbox
+ * @param {String} $flexbox 默认值：flex，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素如何分配空间
+ * @method flex
+ * @param {String} $flex 默认值：1，取值与最新原生语法一致
+ * @param {String} $direction 默认值: row
+ */
+/**
+ * 定义伸缩盒子元素的排版顺序
+ * @method order
+ * @param {String} $order 默认值：1，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素的流动方向
+ * @method flex-direction
+ * @param {String} $flex-direction 默认值：row，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素溢出排版
+ * @method flex-wrap
+ * @param {String} $flex-wrap 默认值：nowrap，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素的水平对齐方式
+ * @method justify-content
+ * @param {String} $justify-content 默认值：center，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素的垂直对齐方式
+ * @method align-items
+ * @param {String} $align-items 默认值：center，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素自身的垂直对齐方式
+ * @method align-self
+ * @param {String} $align-self 默认值：center，取值与最新原生语法一致
+ */
+/**
+ * 单行文本溢出显示方案
+ * @method ellipsis
+ * @param $ellipsis 定义是否需要省略号
+ */
+/**
+ * 设置透明度
+ * @method opacity
+ * @param {number} $opacity:需要设置的透明度的值
+ */
+/**
+ * 设置居中
+ * @method opacity
+ * @param {number} $opacity:需要设置的透明度的值
+ */
+html {
+  color: #000;
+  background: #fff;
+  -webkit-text-size-adjust: 100%;
+  /* 关闭字体大小自动调整功能 */
+  -ms-text-size-adjust: 100%;
+  height: 100%;
+  font-family: "微软雅黑","黑体",Helvetica,Arial, Tahoma, sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+body {
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  /* 渲染文字，让字体抗锯齿 */
+  -moz-osx-font-smoothing: grayscale;
+  font-family: microsoft yahei sans-serif,Heiti SC,Tohoma; }
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box; }
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  word-break: break-all;
+  -webkit-tap-highlight-color: transparent; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: 500; }
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+  height: 0;
+  visibility: hidden; }
+
+.clearfix:after {
+  clear: both; }
+
+a, input, img {
+  /*屏蔽ios和android下点击元素时出现的阴影*/
+  -webkit-tap-highlight-color: transparent; }
+
+input {
+  /*内容可读写，但粘贴内容中的富文本格式（如文本的颜色、大小，图片等）会丢失。内容类似于以纯文本显示。*/
+  -webkit-user-modify: read-write-plaintext-only;
+  border: 0;
+  outline: medium; }
+
+input, select, textarea, option {
+  font-size: 100%;
+  font-family: inherit;
+  /*清除谷歌内核自带input样式*/
+  -webkit-appearance: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+fieldset, img {
+  border: 0 none; }
+
+address, caption, cite, code, dfn, em, th, var {
+  font-style: normal;
+  font-weight: 500; }
+
+ol, ul, li {
+  list-style: none; }
+
+ins, a {
+  text-decoration: none; }
+
+mark {
+  background: none; }
+
+textarea {
+  resize: none; }
+
+img {
+  display: block;
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none;
+  color: #333; }
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="file"]::-webkit-file-upload-button,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none; }

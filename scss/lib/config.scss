@@ -1,0 +1,66 @@
+$config:(
+	bgcolor:#fafafa,
+	color:#212121,
+	fontsize:50px,
+	font-family:#{"Helvetica Neue", Helvetica, STHeiTi, sans-serif},
+	line-height:1.5,
+    bordercolor:#ccc
+) !default;
+
+// Element Input(8)
+$input: (
+    // {Length} 输入框宽度
+    width:             100%,
+    // {Length} 输入框高度
+    height:            .44rem,
+    // {Length} 输入框内补白
+    padding:           .1rem,
+    // {Length} 输入框圆角
+    radius:            .02rem,
+    // {Color} 输入框边框色
+    bordercolor:     #ccc,
+    // {Color} 输入框背景色
+    bgcolor:          map-get($config,color),
+    // {Color} 文本色
+    color:             map-get($config, color),
+    // {Color} 占位符颜色
+    placeholder-color: #bbb
+) !default;
+
+// Element Button(18)
+$btn: (
+    // {Color} Length
+    border-width:   1px,
+    // {Color} 边框色
+    bordercolor:    #e26704,
+    // {Color} 背景色
+    bgcolor:        #ff801a,
+    // {Color} 文本色
+    color:          #fff,
+    // {Color} 激活时边框色
+    active-bordercolor: null,
+    // {Color} 激活时背景色
+    active-bgcolor:     null,
+    // {Color} 激活时文本色
+    active-color:       null,
+    // {Length} 内补白(使用em让根据字号动态调整)
+    padding:        0 1.2em,
+    // {Length} 圆角半径
+    radius:         .02rem,
+    // {Length} 字号
+    font-size:      null,
+    // {Length} 宽度
+    width:          null,
+    // {Length} 高度
+    height:         null,
+    // {Length} 默认预设3种尺寸按钮：
+    // small
+    s-height:       .28rem,
+    s-font-size:    .12rem,
+    // medium
+    m-height:       .36rem,
+    m-font-size:    .14rem,
+    // large
+    l-height:       .44rem,
+    l-font-size:    .16rem
+) !default;

@@ -1,17 +1,12 @@
-$color:#fff;
-$fontsize:21px;
-$left:left;
-*{
-	margin:0;
-	padding:0;
-}
+@import 'lib/class.scss';
+@import 'lib/config.scss';
 html,body{
 	height:100%;
 }
 body{
-	color:#fff;
-	background:$color;
-	font-size:$fontsize;
+	color:map-get($config,color);
+	background:map-get($config,bgcolor);
+	font-size:map-get($config,fontsize);
 }
 
 $btn:(
@@ -21,42 +16,141 @@ $btn:(
 	radius:10px
 ) !default;
 
-
-$vendor:-webkit- -moz- -ms- -o- '' ;
-
-
-@mixin prefix($property, $value){
-	@each $v in $vendor {
-		 #{$v}#{$property}: $value;
-	}
-}
-
-@mixin fontdpr($fontsise){
-	$font_size:$fontsise
-
-}
 .btn{
 	background:map-get($btn,background);
-	margin-#{$left}:50px;
+	margin-left:50px;
 	@include prefix(box-sizing,border-box);
 	color:'#ddd'
 }
 
-
-@mixin font-dpr($font-size){ 
-	font-size: $font-size; 
-	[data-dpr="2"] & {
-	 	font-size: $font-size * 2; 
-	} 
-	[data-dpr="3"] & {
-	 	font-size: $font-size * 3; 
-	} 
-}
 .box{
 	height:60px;
 	width:10rem;
 	color:#ff0;
-	// margin-left:10%;
+	//margin-left:10%;
 	border-bottom:1px solid #000;
-	@include font-dpr(16px)
+	@include font(16px);
+	&:after{
+		content:'你好崔震';
+		background:#fff;
+		color:#000
+	}
+}
+.pic_box{
+	height:300px;
+	width:300px;
+	line-height:300px;
+	font-size:0;
+	color:#000;
+	text-align:center;
+	background:#ff0;
+	img{
+		display:inline-block;
+		vertical-align: middle;
+	}
+}
+.pa{
+	color:#000;
+	margin-top:30px;
+	height:80px;
+	background:#ccc;
+	padding-left:30px;
+	line-height:80px;
+	&:before{
+		background:url(../image/icon15.png) no-repeat center;
+		background-size:100%;
+		padding:15px;
+		content:'';
+		display:inline-block;
+		vertical-align:middle;
+		margin-right:15px
+	}
+
+}
+.navbar{
+	@include flexbox();
+	@include flex();
+	@include justify-content(space-around);
+	@include align-items();
+	height:88px;
+	background:#dadada;
+	position:fixed;
+	bottom:0px;
+	width:100%;
+	color:#000;
+	li{
+		text-align:center;
+	}
+	li.active{
+		color:#0089dc
+	}
+}
+.file {
+    position: relative;
+    display: inline-block;
+    background: #D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 50px;
+    input {
+	    position: absolute;
+	    font-size: 100px;
+	    right: 0;
+	    top: 0;
+	    opacity: 0;
+	}
+	&:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+	}
+}
+ .icon {
+      /* 通过设置 font-size 来改变图标大小 */
+      width: 40px; height: 40px;
+      /* 图标和文字相邻时，垂直对齐 */
+      vertical-align: -0.15em;
+      /* 通过设置 color 来改变 SVG 的颜色/fill */
+      fill: currentColor;
+      /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
+         normalize.css 中也包含这行 */
+      overflow: hidden;
+      margin-bottom:10px
+}
+.modelbox{
+	@include modelbox();
+	.bomb{
+		background:#fff;
+		height:50px;
+		width:80%;
+		text-align:center;
+
+	}
+}
+.recommendmerchat{
+	@include flexbox();
+	@include justify-content();
+	@include align-items();
+	height:80px;
+	text-align:center;
+	&:before{
+		height:1px;
+		width:30px;
+		background:#f00;
+		content:'';
+		margin-right:30px
+	};
+	&:after{
+		height:1px;
+		width:30px;
+		background:#f00;
+		content:'';
+		margin-left:30px
+	}
 }

@@ -1,0 +1,206 @@
+/**
+ * 定义css不同浏览器的前缀
+ * @method prefix
+ * @param {String} $property, 属性； $value 值
+ */
+@mixin prefix($property, $value){
+	$vendor:-webkit- -moz- -ms- -o- '' ;
+	@each $v in $vendor {
+		 #{$v}#{$property}: $value;
+	}
+}
+
+/**
+ * 定义UA默认外观
+ * @method appearance
+ * @param {String} $appearance 指定UA外观类型
+ */
+@mixin appearance($appearance: none) {
+    @include prefix(appearance, $appearance);
+}
+/**
+ * 根据dpi设置不同的字体
+ * @method font
+ * @param {String} $font-size 字体的大小
+ */
+@mixin font($font-size){ 
+	font-size: $font-size; 
+	[data-dpr="2"] & {
+	 	font-size: $font-size * 2; 
+	} 
+	[data-dpr="3"] & {
+	 	font-size: $font-size * 3; 
+	} 
+}
+/**
+ * 定义显示类型为伸缩盒
+ * @method flexbox
+ * @param {String} $flexbox 默认值：flex，取值与最新原生语法一致
+ */
+@mixin flexbox($flexbox: flex) {
+    @if $flexbox == flex {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+    } @else {
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: inline-flex;
+    }
+}
+
+/**
+ * 定义伸缩盒子元素如何分配空间
+ * @method flex
+ * @param {String} $flex 默认值：1，取值与最新原生语法一致
+ * @param {String} $direction 默认值: row
+ */
+@mixin flex($flex: 1, $direction: row) {
+    -webkit-box-flex: $flex;
+    -webkit-flex: $flex;
+    flex: $flex;
+    // 修复Android Browser4.3及以下，iOS Safari6.1及以下按比例分配错误的问题
+    @if $direction == column {
+        height: .1px;
+    } @else {
+        width: .1px;
+    }
+}
+
+/**
+ * 定义伸缩盒子元素的排版顺序
+ * @method order
+ * @param {String} $order 默认值：1，取值与最新原生语法一致
+ */
+@mixin order($order: 1) {
+    -webkit-box-ordinal-group: $order;
+    -webkit-order: $order;
+    order: $order;
+}
+
+/**
+ * 定义伸缩盒子元素的流动方向
+ * @method flex-direction
+ * @param {String} $flex-direction 默认值：row，取值与最新原生语法一致
+ */
+@mixin flex-direction($flex-direction: row) {
+    @if $flex-direction == row {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+    } @else if $flex-direction == column {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+    } @else if $flex-direction == row-reverse {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+    } @else if $flex-direction == column-reverse {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+    }
+    -webkit-flex-direction: $flex-direction;
+    flex-direction: $flex-direction;
+}
+
+/**
+ * 定义伸缩盒子元素溢出排版
+ * @method flex-wrap
+ * @param {String} $flex-wrap 默认值：nowrap，取值与最新原生语法一致
+ */
+@mixin flex-wrap($flex-wrap: nowrap) {
+    @if $flex-wrap == nowrap {
+        -webkit-box-lines: single;
+    } @else {
+        -webkit-box-lines: multiple;
+    }
+    -webkit-flex-wrap: $flex-wrap;
+    flex-wrap: $flex-wrap;
+}
+
+/**
+ * 定义伸缩盒子元素的水平对齐方式
+ * @method justify-content
+ * @param {String} $justify-content 默认值：center，取值与最新原生语法一致
+ */
+@mixin justify-content($justify-content: center) {
+    @if $justify-content == center {
+        -webkit-box-pack: center;
+    } @else if $justify-content == flex-start {
+        -webkit-box-pack: start;
+    } @else if $justify-content == flex-end {
+        -webkit-box-pack: end;
+    } @else if $justify-content == space-between {
+        -webkit-box-pack: justify;
+    }
+    -webkit-justify-content: $justify-content;
+    justify-content: $justify-content;
+}
+
+/**
+ * 定义伸缩盒子元素的垂直对齐方式
+ * @method align-items
+ * @param {String} $align-items 默认值：center，取值与最新原生语法一致
+ */
+@mixin align-items($align-items: center) {
+    @if $align-items == center {
+        -webkit-box-align: center;
+    } @else if $align-items == flex-start {
+        -webkit-box-align: start;
+    } @else if $align-items == flex-end {
+        -webkit-box-align: end;
+    } @else {
+        -webkit-box-align: $align-items;
+    }
+    -webkit-align-items: $align-items;
+    align-items: $align-items;
+}
+
+/**
+ * 定义伸缩盒子元素自身的垂直对齐方式
+ * @method align-self
+ * @param {String} $align-self 默认值：center，取值与最新原生语法一致
+ */
+@mixin align-self($align-self: center) {
+    -webkit-align-self: $align-self;
+    align-self: $align-self;
+}
+
+
+/**
+ * 单行文本溢出显示方案
+ * @method ellipsis
+ * @param $ellipsis 定义是否需要省略号
+ */
+@mixin ellipsis($ellipsis: true) {
+    overflow: hidden;
+    white-space: nowrap;
+    @if $ellipsis {
+        text-overflow: ellipsis;
+    }
+}
+/**
+ * 设置透明度
+ * @method opacity
+ * @param {number} $opacity:需要设置的透明度的值
+ */ 
+@mixin opacity($opacity:50) { 
+	opacity: $opacity / 100; 
+	filter: alpha(opacity=$opacity);
+}
+/**
+ * 设置居中
+ * @method opacity
+ * @param {number} $opacity:需要设置的透明度的值
+ */ 
+@mixin modelbox(){
+	@include flexbox();
+	@include align-items();
+	@include justify-content();
+	position:fixed;
+	top:0;
+	left:0;
+	background:rgba(50,50,50,0.3);
+	height:100%;
+	width:100%;
+	// @include opacity(0);
+	
+}

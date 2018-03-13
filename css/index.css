@@ -1,17 +1,84 @@
-* {
-  margin: 0;
-  padding: 0; }
-
+@charset "UTF-8";
+/**
+ * 定义css不同浏览器的前缀
+ * @method prefix
+ * @param {String} $property, 属性； $value 值
+ */
+/**
+ * 定义UA默认外观
+ * @method appearance
+ * @param {String} $appearance 指定UA外观类型
+ */
+/**
+ * 根据dpi设置不同的字体
+ * @method font
+ * @param {String} $font-size 字体的大小
+ */
+/**
+ * 定义显示类型为伸缩盒
+ * @method flexbox
+ * @param {String} $flexbox 默认值：flex，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素如何分配空间
+ * @method flex
+ * @param {String} $flex 默认值：1，取值与最新原生语法一致
+ * @param {String} $direction 默认值: row
+ */
+/**
+ * 定义伸缩盒子元素的排版顺序
+ * @method order
+ * @param {String} $order 默认值：1，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素的流动方向
+ * @method flex-direction
+ * @param {String} $flex-direction 默认值：row，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素溢出排版
+ * @method flex-wrap
+ * @param {String} $flex-wrap 默认值：nowrap，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素的水平对齐方式
+ * @method justify-content
+ * @param {String} $justify-content 默认值：center，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素的垂直对齐方式
+ * @method align-items
+ * @param {String} $align-items 默认值：center，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素自身的垂直对齐方式
+ * @method align-self
+ * @param {String} $align-self 默认值：center，取值与最新原生语法一致
+ */
+/**
+ * 单行文本溢出显示方案
+ * @method ellipsis
+ * @param $ellipsis 定义是否需要省略号
+ */
+/**
+ * 设置透明度
+ * @method opacity
+ * @param {number} $opacity:需要设置的透明度的值
+ */
+/**
+ * 设置居中
+ * @method opacity
+ * @param {number} $opacity:需要设置的透明度的值
+ */
 html, body {
   height: 100%; }
 
 body {
-  color: #fff;
-  background: #fff;
-  font-size: 21px; }
+  color: #212121;
+  background: #fafafa;
+  font-size: 50px; }
 
 .btn {
-  background: #ddffdd;
   margin-left: 50px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -30,3 +97,143 @@ body {
     font-size: 32px; }
   [data-dpr="3"] .box {
     font-size: 48px; }
+  .box:after {
+    content: '你好崔震';
+    background: #fff;
+    color: #000; }
+
+.pic_box {
+  height: 300px;
+  width: 300px;
+  line-height: 300px;
+  font-size: 0;
+  color: #000;
+  text-align: center;
+  background: #ff0; }
+  .pic_box img {
+    display: inline-block;
+    vertical-align: middle; }
+
+.pa {
+  color: #000;
+  margin-top: 30px;
+  height: 80px;
+  background: #ccc;
+  padding-left: 30px;
+  line-height: 80px; }
+  .pa:before {
+    background: url(../image/icon15.png) no-repeat center;
+    background-size: 100%;
+    padding: 15px;
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px; }
+
+.navbar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  width: .1px;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  height: 88px;
+  background: #dadada;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  color: #000; }
+  .navbar li {
+    text-align: center; }
+  .navbar li.active {
+    color: #0089dc; }
+
+.file {
+  position: relative;
+  display: inline-block;
+  background: #D0EEFF;
+  border: 1px solid #99D3F5;
+  border-radius: 4px;
+  padding: 4px 12px;
+  overflow: hidden;
+  color: #1E88C7;
+  text-decoration: none;
+  text-indent: 0;
+  line-height: 50px; }
+  .file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0; }
+  .file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none; }
+
+.icon {
+  /* 通过设置 font-size 来改变图标大小 */
+  width: 40px;
+  height: 40px;
+  /* 图标和文字相邻时，垂直对齐 */
+  vertical-align: -0.15em;
+  /* 通过设置 color 来改变 SVG 的颜色/fill */
+  fill: currentColor;
+  /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
+         normalize.css 中也包含这行 */
+  overflow: hidden;
+  margin-bottom: 10px; }
+
+.modelbox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(50, 50, 50, 0.3);
+  height: 100%;
+  width: 100%; }
+  .modelbox .bomb {
+    background: #fff;
+    height: 50px;
+    width: 80%;
+    text-align: center; }
+
+.recommendmerchat {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  height: 80px;
+  text-align: center; }
+  .recommendmerchat:before {
+    height: 1px;
+    width: 30px;
+    background: #f00;
+    content: '';
+    margin-right: 30px; }
+  .recommendmerchat:after {
+    height: 1px;
+    width: 30px;
+    background: #f00;
+    content: '';
+    margin-left: 30px; }
