@@ -5,7 +5,7 @@ gulp.task('sass', function(){
     //sass()方法用于转换sass到css
   return gulp.src('./scss/*.scss')   //执行sass文件的路径
     .pipe(sass())
-    //.pipe(px2rem({'width_design':750,ignore_px:['font-size']})) // 将Sass转换为带有gulp-Sass的CSS
+    .pipe(px2rem({'width_design':750})) // 将Sass转换为带有gulp-Sass的CSS
     .pipe(gulp.dest('./css')) //输出css文件的路径
 });
 

@@ -1,0 +1,229 @@
+@import 'lib/class.scss';
+html,body{
+	// height:100%;
+	background:#ccc;
+	overflow-x:hidden;
+}
+.container{
+	padding-bottom:88px;
+
+}
+$headercolor:#B20000;
+/* ========
+   主页
+   ========
+ */
+.header{
+	height:88px;
+	width:10rem;
+	background:#fff;
+	@include flexbox();
+	@include flex();
+	@include justify-content();
+	@include align-items();
+	p{
+		width:80%;
+		text-align:center;
+		font-size:40px;
+	}
+	img{
+		width:30px;
+		height:auto;
+	}
+	span{
+		font-size:30px
+	}
+}
+.swiper{
+	height:350px;
+	img{
+		height:350px;
+		width:100%;
+	}
+}
+.nav{
+	@include flexbox();
+	@include flex();
+	padding:30px 0px;
+	box-sizing:boder-box;
+	background:#fff;
+	@include justify-content(flex-start);
+	@include flex-wrap(wrap);
+	li{
+		width:2.5rem;
+		text-align:center;
+		color:#aaa;
+		margin-bottom:30px;
+		img{
+			display:inline-block;
+			vertical-align: middle;
+			margin:0 auto;
+			margin-bottom:20px;
+		}
+	}
+}
+.productline{
+	width:100%;
+	@include flexbox();
+	@include justify-content();
+	@include align-items();
+	height:80px;
+	&:before{
+		height:1px;
+		background:#f00;
+		width:50px;
+		margin-right:30px;
+		content:'';
+	}
+	&:after{
+		height:1px;
+		background:#f00;
+		width:50px;
+		margin-left:30px;
+		content:'';
+	}
+}
+.product{
+	@include flexbox();
+	@include justify-content(flex-start);
+	@include align-items();
+	@include flex-wrap(wrap);
+	background:#fff;
+	width:100%;
+	.productlist{
+		width:50%;
+		@include flexbox();
+		@include flex-direction(column)
+		@include justify-content(flex-start);
+		@include align-items();
+		border-left:1px solid #ccc;
+		border-bottom:1px solid #ccc;
+		img{
+			width:80%;
+			height:auto;
+			// border-bottom:1px solid #ccc;
+		}
+		.ppa{
+			margin:10px 0;
+			font-size:30px;
+		}
+		.ppb{
+			margin:10px 0;
+			font-size:24px;
+			color:$headercolor;
+		}
+	}
+}
+.icon {
+      /* 通过设置 font-size 来改变图标大小 */
+      width: 40px; height: 40px;
+      /* 图标和文字相邻时，垂直对齐 */
+      vertical-align: -0.15em;
+      /* 通过设置 color 来改变 SVG 的颜色/fill */
+      fill: currentColor;
+      /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
+         normalize.css 中也包含这行 */
+      overflow: hidden;
+      margin-bottom:10px;
+    }
+.footer{
+	height:88px;
+	background:#fff;
+	position:fixed;
+	width:100%;
+	bottom:0;
+	border-top:1px solid #ddd;
+	@include flexbox();
+	@include flex();
+	@include justify-content();
+	@include align-items();
+	li{
+		text-align:center;
+		width:25%;
+		&.active{
+			color:$headercolor
+		}
+	}
+}
+#search{
+	position:fixed;
+	top:0;
+	width:100%;
+	padding:15px;
+	background:$headercolor;
+	@include flexbox();
+	@include justify-content();
+	@include align-items();
+	
+	div{
+		background:#fff;
+		height:60px;
+		padding:0 20px;
+		border-radius:10px;
+		margin-right:30px;
+		img{
+			display:inline-block;
+			vertical-align:middle;
+		}
+		input{
+			height:60px;
+			background:#fff;
+			outline:none;
+			border:none;
+			width:7rem;
+			display:inline-block;
+			vertical-align:middle;
+		}
+	}
+	span{
+		color:#fff;
+		font-size:30px
+	}
+}
+.show{
+	@include opacity(100);
+	@include prefix(transition,1s) 
+}
+.hide{
+	@include opacity(0);
+	@include prefix(transition,1s) 
+}
+
+/*  ========
+	购物车
+	========
+ */
+.cartlist{
+	background:#fff;
+	@include flexbox();
+	@include flex();
+	@include justify-content();
+	@include align-items();
+	width:100%;
+	padding:0 20px;
+	height:4rem;
+	input[type=checkbox]{
+		height:50px;
+		width:50px;
+		border-radius:50px;
+		border:1px solid #666;
+	}
+	img{
+		width:30%;
+		height:auto;
+	}
+	.contents{
+		margin-top:0.7rem;
+		height:3rem;
+		// background:#000;
+		.ppa{
+			font-size:30px;
+			line-height:30px;
+		}
+		.ppb{
+			font-size:24px;
+			color:$headercolor;
+			margin-top:0.6rem;
+		}
+	}
+}

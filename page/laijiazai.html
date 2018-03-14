@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>window</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<style>
+	*{
+		padding:0;
+		margin:0;
+	}
+	body{
+		height:900px;
+		background: #0f0;
+		padding:100px;
+		margin-top:100px;
+	}
+	.box{
+		margin:50px;
+	}
+	.imgbox{
+		padding: 50px
+	}
+	.img{
+		height:100px;
+		width:100px;
+		margin-top:100px;
+		/*background: #ff0;*/
+	}
+	.j{
+		position: absolute;
+		top:50px;
+		left:60px;
+		height:100px;
+		width:100%;
+		background: #00f;
+	}
+	#pos{
+		position: relative;
+		margin-top:50px;
+		height: 300px;
+		width:100%;
+		background: #0ff
+	}
+	#pos div{
+		position: absolute;
+		top:50px;
+		left:50px;
+		height:100px;
+		width:100px;
+		background: #fff
+	}
+	.s{
+		height:900px;
+	}
+	.s img{
+		height:100px;
+		width: auto;
+	}
+	</style>
+</head>
+<body>
+	<div class='box'>
+		<div class='imgbox'>
+			<div class='img' id='img'>
+				<img src="" alt="" data_url='../image/photo01.png'>
+			</div>
+		</div>
+		<div class='j' id='j'>
+			<img src="" alt="" data_url='../image/photo02.png'>
+		</div>
+		<div id= 'pos'>	
+				<div id='ps'>
+					<img src="" alt="" data_url="../image/photo03.png">
+				</div>
+		</div>
+		<div class='s'>
+			<img src="" alt="" data_url='../image/photo01.png'>
+			<img src="" alt="" data_url='../image/photo02.png'>
+			<img src="" alt="" data_url='../image/photo03.png'>
+			<img src="" alt="" data_url='../image/photo03.png'>
+			<img src="" alt="" data_url='../image/photo02.png'>
+			<img src="" alt="" data_url='../image/photo01.png'>
+			<img src="" alt="" data_url='../image/photo01.png'>
+			<img src="" alt="" data_url='../image/photo02.png'>
+			<img src="" alt="" data_url='../image/photo03.png'>
+		</div>
+	</div>
+	<script>
+	console.info(document.documentElement.clientWidth)
+	console.info(document.body.clientWidth);
+	console.info(getoffsettop(img))
+	console.info(img.offsetTop)
+	console.info(j.offsetTop)
+	console.info(getoffsettop(ps))
+	console.info('windowheight='+getwindowheight())
+
+	function getoffsettop(obj){
+		let distance = 0;
+		while(obj){
+		 distance += obj.offsetTop;
+		 obj = obj.offsetParent;
+		}
+		return distance 
+	}
+	
+	console.info('imahe',imgs);
+	var imgs = document.getElementsByTagName('img');
+	function loadimg(){
+		for(var i=0;i<imgs.length;i++){
+				if(getoffsettop(imgs[i])>getscrolltop()&&getoffsettop(imgs[i])<getscrolltop()+getwindowheight()){
+					if(!imgs[i].getAttribute("src")){
+						console.info(111)
+						console.info(imgs[i].getAttribute("src"))
+						imgs[i].setAttribute('src',imgs[i].getAttribute("data_url"))
+					}
+			}
+		}
+
+	}
+	window.onscroll = function(){
+		alert()
+		// if(getoffsettop(ps)>getscrolltop()&&getoffsettop(ps)<getscrolltop()+getwindowheight()){
+		// 	console.info(1)
+		// }
+		
+	}
+	setInterval(function(){loadimg()},200)
+	function getscrolltop(){
+		return document.documentElement.scrollTop||document.body.scrollTop;
+	}
+	function getwindowheight(){
+		return document.documentElement.clientHeight;
+	}
+
+	</script>
+</body>
+</html>
