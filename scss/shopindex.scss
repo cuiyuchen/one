@@ -1,7 +1,7 @@
 @import 'lib/class.scss';
 html,body{
 	// height:100%;
-	background:#ccc;
+	background:#F5F5F5;
 	overflow-x:hidden;
 }
 .container{
@@ -70,15 +70,31 @@ $headercolor:#B20000;
 	height:80px;
 	&:before{
 		height:1px;
-		background:#f00;
+		background:#ccc;
 		width:50px;
 		margin-right:30px;
 		content:'';
 	}
 	&:after{
 		height:1px;
-		background:#f00;
+		background:#ccc;
 		width:50px;
+		margin-left:30px;
+		content:'';
+	}
+}
+.productlines{
+	&:before{
+		height:1px;
+		background:#999;
+		width:30%;
+		margin-right:30px;
+		content:'';
+	}
+	&:after{
+		height:1px;
+		background:#999;
+		width:30%;
 		margin-left:30px;
 		content:'';
 	}
@@ -202,12 +218,6 @@ $headercolor:#B20000;
 	width:100%;
 	padding:0 20px;
 	height:4rem;
-	input[type=checkbox]{
-		height:50px;
-		width:50px;
-		border-radius:50px;
-		border:1px solid #666;
-	}
 	img{
 		width:30%;
 		height:auto;
@@ -218,12 +228,481 @@ $headercolor:#B20000;
 		// background:#000;
 		.ppa{
 			font-size:30px;
-			line-height:30px;
+			line-height:50px;
 		}
 		.ppb{
-			font-size:24px;
+			font-size:26px;
 			color:$headercolor;
-			margin-top:0.6rem;
+			margin-top:0.3rem;
+			text-align:justify;
+			overflow:hidden;
+			.span1{
+				font-size:35px;
+			}
+			.span2{
+				color:#666;
+				margin-left:20px;
+			}
+			.span3{
+				float:right;
+				color:#666
+			}
 		}
 	}
+}
+input[type=checkbox]{
+	height:35px;
+	width:35px;
+	border-radius:35px;
+	border:1px solid #666;
+
+}
+input[type=checkbox]:checked{
+	height:35px;
+	width:35px;
+	border-radius:35px;
+	border:1px solid #666;
+	background:url('../image/icon15.png') no-repeat center;
+	background-size:100%;
+}
+.acount{
+	height:60px;
+	position:fixed;
+	bottom:88px;
+	background:#fff;
+	width:100%;
+	color:#666;
+	@include flexbox();
+	@include align-items();
+	@include justify-content(flex-end)
+	.checkbox{
+		width:30%;
+		text-align:left;
+		padding:0 20px;
+		input{
+			margin-right:15px;
+		}
+	}
+	p{
+		width:50%;
+	}
+	.accountbtn{
+		width:20%;
+		height:50px;
+		background:#f00;
+		color:#fff;
+		line-height:50px;
+		text-align:center;
+	}
+}
+.navimg{
+	width:100%;
+	height:350px;
+	background:url(../image/my-bg.png) no-repeat center;
+	background-size:container;
+	@include flexbox();
+	@include justify-content();
+	@include align-items();
+	@include flex-direction(column);
+	color:#fff;
+	p{
+		margin-top:20px;
+		font-size:35px;
+	}
+}
+.tabbox{
+	width:100%;
+	height:130px;
+	@include flexbox();
+	@include justify-content();
+	@include align-items();
+	background:#fff;
+	color:#000;
+	font-size:36px;
+	.tablist{
+		width:50%;
+		@include flexbox();
+		@include justify-content();
+		@include align-items();
+		p{
+			margin-left:20px;
+		}
+	}
+	.tablist1{
+		border-right:1px solid #ccc;
+	}
+
+}
+.icons {
+      /* 通过设置 font-size 来改变图标大小 */
+      width: 60px; height: 60px;
+      /* 图标和文字相邻时，垂直对齐 */
+      vertical-align: -0.15em;
+      /* 通过设置 color 来改变 SVG 的颜色/fill */
+      fill: currentColor;
+      /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
+         normalize.css 中也包含这行 */
+      overflow: hidden;
+      margin-bottom:10px;
+      color:#f00;
+    }
+.flownav{
+	width:100%;
+	@include flexbox();
+	@include justify-content();
+	@include align-items();
+	background:#fff;
+	color:$headercolor;
+	height:150px;
+	border-top:1px solid #999;
+	margin-top:15px;
+	.flowlist{
+		width:25%;
+		text-align:center;
+		p{color:#000}
+		
+	}
+}
+.mylist{
+	width:100;
+	margin-top:30px;
+	background:#fff;
+	.myitems{
+		height:100px;
+		font-size:30px;
+		line-height:100px;
+		padding:0 20px;
+		background:url(../image/icon08.png) no-repeat 97% center;
+		border-bottom:1px solid #ccc;
+		img{
+			display:inline-block;
+			vertical-align:middle;
+			margin-right:10px;
+		}
+		span{
+			display:inline-block;
+			vertical-align:middle;
+		}
+		.span2{
+			float:right;
+			font-size:24px;
+			color:#666;
+			margin-right:30px;
+		}
+		// &:before{
+		// 	background:url(../image/icon-jkda.png) no-repeat left center;
+		// 	padding:30px;
+		// 	content:'';
+		// }
+	}
+}
+// 登陆页面
+.inputbox{
+	width:86%;
+	margin:2rem auto;
+	.ins{
+		padding:10px 10px;
+		background:#fff;
+		margin-bottom:30px;
+		border-radius:10px;
+		position:relative;
+		input{
+			width:100%;
+			height:60px;
+		}
+		.yzmbtn{
+			position:absolute;
+			right:0;
+			color:$headercolor;
+			background:#fff;
+			top:0;
+			width:30%;
+			text-align:center;
+			display:inline-block;
+			height:60px;
+			line-height:80px;
+		}
+	}
+	.btn{
+		height:88px;
+		background:$headercolor;
+		margin-bottom:30px;
+		border-radius:10px;
+		color:#fff;
+		text-align:center;
+		line-height:80px;
+		font-size:32px;
+		border:1px solid #FFCBCB;
+	}
+	.registerbtn{
+		background:#FFCBCB;
+		color:$headercolor;
+		border:1px solid $headercolor;
+	}
+	
+}
+.threelogin{
+	width:100%;
+	overflow:hidden;
+}
+.loginlist{
+	float:left;
+	width:50%;
+	text-align:center;
+	margin-top:50px;
+	img{
+		display:inline-block;
+		margin-bottom:30px;
+	}
+}
+.loginsuccess{
+    height:88px;
+	background:rgba(0,0,0,0.7);
+	margin-bottom:30px;
+	border-radius:10px;
+	color:#fff;
+	width:90%;
+	margin:0 auto;
+	text-align:center;
+	line-height:80px;
+	font-size:32px;
+	position:fixed;
+	bottom:50px;
+	left:5%;
+	&:before{
+		background:url(../image/icon18.png) no-repeat center;
+		padding:30px;
+		content:'';
+	}
+
+}
+.modelbox{
+	@include modelbox();
+	.loginfail{
+		height:200px;
+		width:50%;
+		background:#fff;
+		border-top:10px solid $headercolor;
+		border-radius:10px;
+		text-align:center;
+	}
+	
+	.ppa{
+		height:120px;
+		line-height:120px;
+		border-bottom:1px solid #999;
+		font-size:26px;
+	}
+	.ppb{
+		height:80px;
+		line-height:80px;
+		color:$headercolor;
+		font-size:30px
+	}
+}
+.registerinput{
+	margin:1rem auto;
+	.seletbox{
+		overflow:hidden;
+		select{
+			padding:10px;
+			float:left;
+			width:49%;
+			outline:none;
+			height:80px;
+			border:0;
+			margin-bottom:30px;
+			color:#999;
+			box-sizing:border-box;
+			//#fff url(../img/icon17.png) no-repeat right 0.35rem center
+			background:#fff url('../image/icon17.png') no-repeat 95% center
+		}
+		.select1{
+			margin-right:2%;
+		}
+	}
+}
+.gologin{
+	width:100%;
+	text-align:center;
+	margin-top:20px;
+	color:#666;
+	span{
+		color:$headercolor;
+	}
+}
+.productmain{
+	width:100%;
+	overflow:hidden;
+	.main_left{
+		width:30%;
+		background:#fff;
+		padding-top:50px;
+		position:fixed;
+		// left:0;
+		// top:0;
+		li{
+			height:80px;
+			text-align:center;
+			line-height:80px;
+			border-bottom:1px solid #ccc;
+		}
+		.active{
+			background:#F5F5F5;
+		}
+	}
+	.main_right{
+		float:right;
+		width:70%;
+		.productitem{
+			width:46%;
+			margin-top:4%;
+			margin-left:4%;
+			background:#fff;
+			text-align:center;
+			float:left;
+			img{
+				width:80%;
+				height:auto;
+				display:inline-block;
+			}
+			p{
+				@include ellipsis(ture)
+			}
+			.ppb{
+				color:$headercolor;
+				padding-bottom:20px;
+				margin-top:20px;
+			}
+		}
+	}
+}
+.desc{
+	background:#fff;
+	padding:20px;
+	line-height:40px;
+	font-size:30px;
+	color:#aaa;
+	p{
+		color:$headercolor;
+		font-size:35px;
+		margin-top:20px;
+		span{
+			color:#aaa;
+			font-size:30px;
+			margin-left:30px;
+		}
+	}
+}
+.proparamter{
+	height:100px;
+	line-height:100px;
+	padding:0 20px;
+	margin-top:15px;
+	background:#fff url(../image/icon08.png) no-repeat 97% center;
+	font-size:30px;
+}
+.productdetail{
+	height:100px;
+	line-height:100px;
+	// padding:0 20px;
+	margin-top:15px;
+	background:#fff ;
+	font-size:30px;
+	&:before{
+		width:5px;
+		height:40px;
+		background:$headercolor;
+		content:'';
+		display:inline-block;
+		vertical-align:middle;
+		margin-right:30px;
+	}
+}
+.kefunav{
+	height:90px;
+	width:100%;
+	background:#fff;
+	position:fixed;
+	bottom:0;
+	.li1{
+		float:left;
+		width:20%;
+		text-align:center;
+		margin-top:15px;
+		.icon{
+			height:30px;
+			width:30px;
+			font-size:40px;
+		}
+	}
+	.li2{
+		float:left;
+		width:30%;
+		text-align:center;
+		color:#fff;
+		line-height:90px;
+		background:#FFA800;
+		font-size:30px
+	}
+	.placeorder{
+		background:#f00;
+	}
+}
+.models{
+	@include modelbox();
+	.modelcart{
+	position: fixed;
+	bottom:0;
+	width:100%;
+	background:#fff;
+	padding-top:30px;
+	.probox{
+		overflow:hidden;
+		padding-bottom:30px;
+		border-bottom:1px solid #ccc;
+		img	{
+			float:left;
+			width:30%
+		}
+		div{
+			float:right;
+			width:70%;
+			font-size:30px;
+			padding:30px;
+			line-height:50px;
+			.ppb{
+				margin-top:15px;
+				color:$headercolor;
+				.span2{
+					color:#000;
+					margin-left:30px;
+				}
+			}
+		}
+	}
+	.buynums{
+		padding:30px;
+		font-size:30px;
+		.changnums{
+			float:right;
+			.ppa{
+				padding:15px 20px;
+				background:#ccc;
+			}
+			.ppb{
+				padding:15px 20px;
+			}
+		}
+
+	}
+	.buybtn{
+		background:$headercolor;
+		color:#fff;
+		width:100%;
+		text-align:center;
+		padding:30px;
+		font-size:30px;
+	}
+}
 }

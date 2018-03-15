@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>产品详情</title>
+	<script src="../../js/eleflexible.js"></script>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/shopindex.css">
+	<script src="../../font/iconfont.js"></script>
+	<script src='../../js/common.js'></script>
+	<script src='../../js/jquery.js'></script>
+</head>
+<body>
+	<div class='container'>
+		<div class='header'>
+			<p>产品分类</p>
+		</div>
+		<div class='productmain'>
+			<ul class="main_left">
+				<li class='active'>全部类型</li>
+				<li>53°迎宾酒</li>
+				<li>飞天茅台系列</li>
+				<li>五星茅台系列</li>
+				<li>年份酒</li>
+				<li>纪念酒</li>
+				<li>习酒</li>
+				<li>白金酒</li>
+				<li>葡萄酒</li>
+			</ul>
+			<div class="main_right">
+				<div class='productitem'>
+					<img src="../../image/photo01.png" alt="">
+					<p class='ppa'>53度茅台迎宾酒(2013款）</p>
+					<p class='ppb'>RMB 398.00</p>
+				</div>
+				<div class='productitem'>
+					<img src="../../image/photo01.png" alt="">
+					<p class='ppa'>53度茅台迎宾酒(2013款）</p>
+					<p class='ppb'>RMB 398.00</p>
+				</div>
+				<div class='productitem'>
+					<img src="../../image/photo01.png" alt="">
+					<p class='ppa'>53度茅台迎宾酒(2013款）</p>
+					<p class='ppb'>RMB 398.00</p>
+				</div>
+				<div class='productitem'>
+					<img src="../../image/photo01.png" alt="">
+					<p class='ppa'>53度茅台迎宾酒(2013款）</p>
+					<p class='ppb'>RMB 398.00</p>
+				</div>
+				<div class='productitem'>
+					<img src="../../image/photo01.png" alt="">
+					<p class='ppa'>53度茅台迎宾酒(2013款）</p>
+					<p class='ppb'>RMB 398.00</p>
+				</div>
+				<div class='productitem'>
+					<img src="../../image/photo01.png" alt="">
+					<p class='ppa'>53度茅台迎宾酒(2013款）</p>
+					<p class='ppb'>RMB 398.00</p>
+				</div>
+				<div class='productitem'>
+					<img src="../../image/photo01.png" alt="">
+					<p class='ppa'>53度茅台迎宾酒(2013款）</p>
+					<p class='ppb'>RMB 398.00</p>
+				</div>
+				<div class='productitem'>
+					<img src="../../image/photo01.png" alt="">
+					<p class='ppa'>53度茅台迎宾酒(2013款）</p>
+					<p class='ppb'>RMB 398.00</p>
+				</div>
+				<div class='productitem'>
+					<img src="../../image/photo01.png" alt="">
+					<p class='ppa'>53度茅台迎宾酒(2013款）</p>
+					<p class='ppb'>RMB 398.00</p>
+				</div>
+				<div class='productitem'>
+					<img src="../../image/photo01.png" alt="">
+					<p class='ppa'>53度茅台迎宾酒(2013款）</p>
+					<p class='ppb'>RMB 398.00</p>
+				</div>
+				<div class='productitem'>
+					<img src="../../image/photo01.png" alt="">
+					<p class='ppa'>53度茅台迎宾酒(2013款）</p>
+					<p class='ppb'>RMB 398.00</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<ul class='footer'>
+		<li>
+			<svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-shouye"></use>
+            </svg>
+			<p>首页</p>
+		</li>
+		<li class='active'>
+			<svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-weibiaoti1"></use>
+            </svg>
+			<p>产品</p>
+		</li>
+		<li>
+			<svg class="icon" aria-hidden="true">
+               <use xlink:href="#icon-gouwuche"></use>
+           </svg>
+			<p>购物车</p>
+		</li>
+		<li>
+			<svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-wodedingdan"></use>
+            </svg>
+			<p>我的</p>
+		</li>
+	</ul>
+</body>
+</html>
+<script>
+	var lis = document.getElementsByTagName('li');
+	var lisobj = lis[0];
+	for(var i=0;i<lis.length;i++){
+		(function(i){
+			lis[i].onclick=function(){
+				if(lisobj){
+					lisobj.className='';
+				}
+				lisobj = lis[i];
+				lis[i].className = 'active';
+			}
+		})(i)
+	}
+</script>

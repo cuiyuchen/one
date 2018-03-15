@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="../../css/shopindex.css">
 	<script src="../../font/iconfont.js"></script>
 	<script src='../../js/common.js'></script>
+	<script src='../../js/jquery.js'></script>
 </head>
 <body>
 	<div class='container'>
@@ -18,13 +19,43 @@
 		</div>
 		<div class='cartlist'>
 			<div><input type="checkbox"></div>
-			
 			<img src="../../image/photo01.png" alt="">
 			<div class='contents'>
 				<p class='ppa'>茅台53度茅台迎宾酒500mlx6瓶装 整箱酒厂直供</p>
-				<p class='ppb'>¥ 398.00</p>¥ 560.00  x3
+				<p class='ppb'> <span class='span1'>¥ 398.00</span><span class='span2'>¥ 560.00</span>  <span class='span3'>x3</span></p>
 			</div>
 		</div>
+		<div class='cartlist'>
+			<div><input type="checkbox"></div>
+			<img src="../../image/photo03.png" alt="">
+			<div class='contents'>
+				<p class='ppa'>茅台53度茅台迎宾酒500mlx6瓶装 整箱酒厂直供</p>
+				<p class='ppb'> <span class='span1'>¥ 398.00</span><span class='span2'>¥ 560.00</span>  <span class='span3'>x3</span></p>
+			</div>
+		</div>
+		<div class='cartlist'>
+			<div><input type="checkbox"></div>
+			
+			<img src="../../image/photo02.png" alt="">
+			<div class='contents'>
+				<p class='ppa'>茅台53度茅台迎宾酒500mlx6瓶装 整箱酒厂直供</p>
+				<p class='ppb'> <span class='span1'>¥ 398.00</span><span class='span2'>¥ 560.00</span>  <span class='span3'>x3</span></p>
+			</div>
+		</div>
+		<div class='cartlist'>
+			<div><input type="checkbox"></div>
+			
+			<img src="../../image/photo03.png" alt="">
+			<div class='contents'>
+				<p class='ppa'>茅台53度茅台迎宾酒500mlx6瓶装 整箱酒厂直供</p>
+				<p class='ppb'> <span class='span1'>¥ 398.00</span><span class='span2'>¥ 560.00</span>  <span class='span3'>x3</span></p>
+			</div>
+		</div>
+	</div>
+	<div class='acount'>
+		<div class='checkbox'><input type='checkbox' id='checkall'>全选</div>
+		<p>不含运费合计：1194</p>
+		<div class='accountbtn'>去付款</div>
 	</div>
 	<ul class='footer'>
 		<li>
@@ -54,3 +85,25 @@
 	</ul>
 </body>
 </html>
+<script>
+	 $('.cartlist input').click(function(){
+	 	var checkflag = true
+	 	$('.cartlist input').each(function(){
+	 		if(!this.checked){
+	 			checkflag = false
+	 		}
+	 	})	
+	 	$('#checkall').prop('checked',checkflag)
+	 })	
+	 $('#checkall').click(function(){
+	 	if(this.checked){
+	 		$('.cartlist input').each(function(){
+	 			$(this).prop('checked',true)
+	 		})	
+	 	}else{
+	 		$('.cartlist input').each(function(){
+	 			$(this).prop('checked',false)
+	 		})	
+	 	}
+	 })
+</script>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>register</title>
+	<script src="../../js/eleflexible.js"></script>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/shopindex.css">
+	<script src="../../font/iconfont.js"></script>
+	<script src='../../js/common.js'></script>
+	<script src='../../js/jquery.js'></script>
+</head>
+<body>
+	<div class="container">
+		<div class='header'>
+			<img src="../../image/icon11.png" alt="" style='width:30px'>
+			<p>登陆</p>
+			<span style='color:#fff'>dfds</span>
+		</div>
+		<div class='inputbox registerinput'>
+			<div class='ins'>
+				<input type="text" placeholder='请输入姓名' onfocus="if(this.placeholder=='请输入姓名')this.placeholder=''"onblur="if(this.placeholder =='') this.placeholder ='请输入姓名'">
+			</div>
+			<div class='ins'>
+				<input type="text" placeholder='请输入手机号'  onfocus="if(this.placeholder=='请输入手机号')this.placeholder=''"onblur="if(this.placeholder =='') this.placeholder ='请输入手机号'">
+			</div>
+			<div class="ins">
+				<input type="password" placeholder ='请输入验证码' onfocus="if(this.placeholder=='请输入验证码')this.placeholder=''"onblur="if(this.placeholder =='') this.placeholder ='请输入验证码'">
+				<span class='yzmbtn'>发送验证码</span>
+			</div>
+			<div class="ins">
+				<input type="text" placeholder ='请输入证件号' onfocus="if(this.placeholder=='请输入证件号')this.placeholder=''"onblur="if(this.placeholder =='') this.placeholder ='请输入证件号'">
+			</div>
+			<div class='seletbox'>	
+				<select name="" id="" class='select1'>
+					<option value="">省份</option>
+				</select>
+				<select name="" id="">
+					<option value="">地区</option>
+				</select>
+			</div>
+			<div class="ins">
+				<input type="text" placeholder ='请输入详细的收货地址' onfocus="if(this.placeholder=='请输入详细的收货地址')this.placeholder=''"onblur="if(this.placeholder =='') this.placeholder ='请输入详细的收货地址'">
+			</div>
+			<div class='btn'>登陆并注册</div>
+			<p class='gologin'>已经注册过账号<span>	去登陆</span></p>
+			<!-- <div class='btn registerbtn'>新用户注册</div> -->
+		</div>
+		<!-- <div class='productline productlines'>第三方登陆</div>
+		<div class='threelogin'>
+			<div class='loginlist'>
+				<img src="../../image/img10.png" alt="">
+				<p>微信账号</p>
+			</div>
+			<div class='loginlist'>
+				<img src="../../image/img12.png" alt="">
+				<p>QQ会员</p>
+			</div>
+		</div> -->
+	</div>
+	<div class='loginsuccess' style="display:none">
+		登陆成功
+	</div>
+	<div class="modelbox" style="display:none">
+		<div class='loginfail'>
+			<p class='ppa'>手机号或者验证码错误</p>
+			<p class='ppb'>我知道了</p>
+		</div>
+	</div>
+</body>
+</body>
+</html>
